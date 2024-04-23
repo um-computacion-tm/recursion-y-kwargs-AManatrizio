@@ -1,7 +1,10 @@
 import unittest
 def fibonacci(n):
-    #Suerte!
-    ...
+    
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
     
 class TestFibonacci(unittest.TestCase):
     def test_with_0(self):
@@ -14,11 +17,7 @@ class TestFibonacci(unittest.TestCase):
     
     def test_with_2(self):
         resultado = fibonacci(2)
-        self.assertEqual(resultado, 2)
-    
-    def test_with_2(self):
-        resultado = fibonacci(2)
-        self.assertEqual(resultado, 2)
+        self.assertEqual(resultado, 1) 
     
     def test_with_5(self):
         resultado = fibonacci(5)
